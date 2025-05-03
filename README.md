@@ -40,6 +40,10 @@ You can either install via WSL (recommended) or using powershell (not covered, b
 2. Install Docker for Windows from [Docker's official website](https://www.docker.com/products/docker-desktop/)
 
 3. Install Minikube from [Minikube's official website](https://minikube.sigs.k8s.io/docs/)
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kicbase:v0.0.46
+v0.0.46: Pulling from google_containers/kicbase
+minikube delete && minikube start --force --memory=2200mb --base-image='registry.cn
+-hangzhou.aliyuncs.com/google_containers/kicbase:v0.0.46' --image-mirror-country='cn'
 
 4. Install Tilt from [Tilt's official website](https://tilt.dev/)
 
