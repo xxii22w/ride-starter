@@ -5,19 +5,19 @@ import (
 	"ride-sharing/services/trip-service/internal/domain"
 )
 
-type inmenRepository struct {
+type inmemRepository struct {
 	trips     map[string]*domain.TripModel
 	rideFares map[string]*domain.RideFareModel
 }
 
-func NewInmenRepository() *inmenRepository {
-	return &inmenRepository{
+func NewInmemRepository() *inmemRepository {
+	return &inmemRepository{
 		trips:     make(map[string]*domain.TripModel),
 		rideFares: make(map[string]*domain.RideFareModel),
 	}
 }
 
-func (r *inmenRepository) CreateTrip(ctx context.Context, trip *domain.TripModel) (*domain.TripModel, error) {
+func (r *inmemRepository) CreateTrip(ctx context.Context, trip *domain.TripModel) (*domain.TripModel, error) {
 	r.trips[trip.ID.Hex()] = trip
 	return trip, nil
 }
